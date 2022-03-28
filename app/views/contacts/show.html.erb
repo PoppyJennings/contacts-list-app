@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h1>This is the show page for each contact</h1>
 <p>
   <strong>First name:</strong>
   <%= @contact.first_name %>
@@ -22,3 +23,28 @@
 
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>
+
+<h1>Contact history</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Updated</th>
+      <th>Previous entry</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%# <% @contacts.each do |contact| > %>
+      <tr>
+        <td>Email</td>
+        <td>27/03/2022</td>
+        <td>poppyj@hotmail.com</td>
+        <%# <td><%= contact.first_name ></td> %>
+        <%# <td><%= contact.last_name ></td> %>
+        <%# <td><%= contact.email ></td> %>
+      </tr>
+    <%# <% end > %>
+  </tbody>
+</table>

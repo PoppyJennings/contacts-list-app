@@ -1,0 +1,22 @@
+<%= render 'search/form' %>
+<h1 class="text-center"><%= pluralize(@contacts.count, "Result") %></h1>
+<div class="container">
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th><%= sort_link(@query, :first_name, "First name", default_order: :asc) %></th>
+        <th><%= sort_link(@query, :last_name, "Last name") %></th>
+        <th><%= sort_link(@query, :email, "Email address") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td><%= link_to contact.first_name, contact %></td>
+          <td><%= contact.last_name %></td>
+          <td><%= contact.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

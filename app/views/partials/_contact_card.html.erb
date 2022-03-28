@@ -1,0 +1,13 @@
+<div class="contacts">
+  <% @contacts.each do |contact| %>
+    <div class="contact">
+      <%= contact.first_name %>
+      <%= contact.last_name %>
+      <%= contact.email %>
+      <%= contact.phone %>
+      <%= link_to 'Show', contact %>
+      <%= link_to 'Edit', edit_contact_path(contact) %>
+      <%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+</div>
