@@ -6,15 +6,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
-  def show
-    # Need to make this specific to contact instance, not all of them
-    ##########################
-    ############################
-    #######################
-    @contacts = Contact.all
-    #################
-    ################
-  end
+  def show; end
 
   def new
     @contact = Contact.new
