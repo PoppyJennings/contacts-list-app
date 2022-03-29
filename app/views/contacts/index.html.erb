@@ -1,16 +1,13 @@
 <p id="notice"><%= notice %></p>
-<h1>This is the contacts dashboard page</h1>
-<h1>Contacts</h1>
 
-<%= render 'search/form' %>
-
-<div class="columns">
-  <%# <%= render 'search/form' %> 
-  <%# <div class="contacts-table"><%= render 'partials/contacts_table' ></div> %>
-  <div class="contacts-form"><%= render partial: 'contacts/form', locals: { contact: @contact } %></div>
-</div>
-<%# <%= link_to 'New Contact', new_contact_path %>
-
-<section id="contacts">
-  <%= render 'partials/contact_card' %>
+<section id="contacts" class="contacts d-flex">
+  <div class="contact-list">
+    <h1 class="title">Contacts</h1>
+    <%= render 'search/form' %>
+    <%= render 'partials/contacts_card' %>
+  </div>
+  <div class="add-contact">
+    <h2>Add a contact</h2>
+    <div class="contacts-form"><%= render partial: 'contacts/form', locals: { contact: @contact } %></div>
+  </div>
 </section>

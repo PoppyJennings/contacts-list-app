@@ -75,23 +75,26 @@ p {
   }
 }
 
+.title {
+  margin: 0% 2%;
+}
 ///// BUTTONS /////
 .button {
   font-size: 16px;
-  line-height: 20px;
   font-weight: 600;
   padding: 5px 12px;
   border-radius: 10rem;
   cursor: pointer;
   text-align: center;
   height: 20px;
-  margin-bottom: 5px;
+  margin: 5px 0;
 }
 
 .button--pink {
   border: none;
   background: #ff355e;
   color: white;
+  line-height: 20px;
   &:hover {
     background: #e51943;
   }
@@ -101,6 +104,7 @@ p {
   border: 2px solid #ff355e;
   background: white;
   color: #ff355e;
+  line-height: 18px;
   &:hover {
     background: #F4F4F5;
   }

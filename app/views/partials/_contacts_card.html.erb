@@ -1,5 +1,4 @@
-<%= render 'search/form' %>
-<div class="contact-cards">
+<%# <div class="contact-cards"> %>
   <% @contacts.each do |contact| %>
     <div class="contact-card d-flex">
       <%# <div class="contact-content"> %>
@@ -21,4 +20,7 @@
       <%# </div> %>
     </div>
   <% end %>
-</div>
+<%# </div> %>
+
+            <%# Would be good to show the edit contact form directly on the page when the edit putton is clicked %>
+            <%# <%= render 'form', contact: @contact %>

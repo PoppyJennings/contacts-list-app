@@ -2,14 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.search-form {
-
+.form__search {
+  margin: 0 2%;
+  width: 50%;
 }
 
-.search-field {
-
+.field__search {
+  height: auto;
+  font-weight: 400;
+  text-align: left;
+  width: 65%;
+  min-width: 300px;
+  margin-right: 10px;
 }
 
-.search-button {
-  
+.button__search {
+  height: auto;
 }

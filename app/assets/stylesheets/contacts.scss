@@ -13,5 +13,23 @@
 
 #contacts {
   background-color: #F4F4F5;
-  padding: 50px 0;
+  padding: 10px 0;
+  background-image: url(https://assets.factorialhr.com/assets/public/artifact-circle-51a8becedf21a8e2544d7b4f1137a28ceff658749229b8d444c56f13d429391a.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+// @media screen {
+  
+// }
+.contacts {
+  justify-content: space-between;
+}
+
+.contact-list {
+  flex-grow: 3;
+}
+
+.add-contact {
+  flex-grow: 1;
 }
