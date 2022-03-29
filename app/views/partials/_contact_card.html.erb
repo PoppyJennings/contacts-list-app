@@ -3,15 +3,15 @@
     <div class="contact-card d-flex">
       <%# <div class="contact-content"> %>
         <div class="contact-details d-flex">
-          <div><p><%= contact.first_name %> <%= contact.last_name %></p></div>
+          <div><p class="contact-name"><%= contact.first_name %> <%= contact.last_name %></p></div>
           <%# <div><p><%= contact.last_name ></p></div> %>
           <div><p><%= contact.email %></p></div>
           <div><p><%= contact.phone %></p></div>
         </div>
         <div class="contact-actions d-flex">
           <div class="contact-buttons d-flex">
-            <%= link_to 'View', contact, class: "button--pink" %>
-            <%= link_to 'Edit', edit_contact_path(contact) %>
+            <%= link_to 'View', contact, class: "button button--pink" %>
+            <%= link_to 'Edit', edit_contact_path(contact), class: "button button--pink-outline" %>
           </div>
           <div class="contact-delete d-flex"> 
             <%= link_to 'Delete contact', contact, method: :delete, data: { confirm: 'Are you sure?' } %>

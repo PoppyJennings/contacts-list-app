@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Contact < ApplicationRecord
-  include ActiveModel::Dirty
+  has_paper_trail on: [:update, :destroy]
+  # include ActiveModel::Dirty
 
   # define_attribute_methods :first_name, :last_name, :email, :phone
 

@@ -31,26 +31,44 @@
 <%= @contact.changes %>
 <%= @contact.previous_changes %>
 
-<table>
+
+
+<h2>Versions</h2>
+<table class='table'>
   <thead>
     <tr>
-      <th>Field</th>
-      <th>Updated</th>
-      <th>Previous entry</th>
+      <th>ID</th>
+      <th>Modifier</th>
+      <th>Action</th>
+      <th>Changes</th>
     </tr>
   </thead>
-
   <tbody>
-    <%# <% @contacts.each do |contact| > %>
-      <tr>
-        <td>Email</td>
-        <td>27/03/2022</td>
-        <td>poppyj@hotmail.com</td>
-        <%# <td><%= contact.first_name ></td> %>
-        <%# <td><%= contact.last_name ></td> %>
-        <%# <td><%= contact.email ></td> %>
-      </tr>
-    <%# <% end > %>
-  </tbody>
+    <% @contact.versions.each do |version| %>
+      <%= tag.tr do %>
+        <%= tag.td version.id %>
+        <%= tag.td version.whodunnit %>
+        <%= tag.td link_to 'rollback', contact_rollback_path(@contact, version: version) %>
+        <%= tag.td do %>
+          <%= tag.ul class: 'list-group' do %>
+            <li class='list-group-item'>
+              <strong>First Name:</strong> 
+              <%= version.changed_object.first_name %> 
+            </li>
+            <li class='list-group-item'>
+              <strong>Last Name:</strong> 
+              <%# <%= version.changed_object.last_name %>
+            </li>
+            <li class='list-group-item'>
+              <strong>Email:</strong> 
+              <%# <%= version.changed_object.email %>
+            </li>
+            <li class='list-group-item'>
+              <strong>Phone:</strong> 
+              <%# <%= version.changed_object.phone %>
+            </li>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
 </table>
-

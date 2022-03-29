@@ -57,6 +57,16 @@ class ContactsController < ApplicationController
     end
   end
 
+  def rollback
+    @contact = Contact.find(params[:contact_id])
+    version = @contact.versions.find(params[:version])
+    if version.reify.save
+      redirect_to @contact, notice: 'contact was successfully rollbacked.'
+    else
+      render :show
+    end
+  end
+
   private
 
   def set_contact
