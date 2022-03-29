@@ -26,6 +26,7 @@
 section {
   width: 100%;
   margin: 50px 0;
+  background-color: #F4F4F5;
 }
 ///// UTILITIES /////
 .d-flex {
@@ -33,15 +34,19 @@ section {
 }
 
 ///// TEXT /////
+// a {
+//   color: #000; }
+
+// a:visited {
+//   color: #666; }
+
+// a:hover {
+//   color: #fff;
+//   background-color: #000; }
+
 a {
-  color: #000; }
-
-a:visited {
-  color: #666; }
-
-a:hover {
-  color: #fff;
-  background-color: #000; }
+  text-decoration: none !important;
+}
 
 h1, h2, h3, h4, body, p, ol, ul {
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
@@ -68,4 +73,18 @@ p {
     font-size: 30px;
     line-height: 40px;
   }
+}
+
+///// BUTTONS /////
+.button--pink {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 5px 12px;
+  border: none;
+  background: #ff355e;
+  border-radius: 10rem;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  height: 20px;
 }
