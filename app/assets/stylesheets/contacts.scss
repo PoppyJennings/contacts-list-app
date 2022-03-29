@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.columns {
-  display: inline-flex;
+// .columns {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   @media screen and (min-width: 500px) {
+//     flex-direction: column-reverse;
+//   }
+// }
+
+#contacts {
+  background-color: #F4F4F5;
 }

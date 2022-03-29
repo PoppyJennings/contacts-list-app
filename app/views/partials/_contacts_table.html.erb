@@ -5,8 +5,8 @@
       <th>Last name</th>
       <th>Email</th>
       <th>Phone</th>
+      <th>View contact</th>
       <th>Edit contact</th>
-      <%# <th colspan="2">Actions</th> %>
       <th>Danger zone!</th>
     </tr>
   </thead>
@@ -14,13 +14,19 @@
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
-        <td><%= link_to contact.first_name, contact %></td>
-        <td><%= contact.last_name %></td>
-        <td><%= contact.email %></td>
-        <td><%= contact.phone %></td>
-        <%# <td><%= link_to 'Full contact details', contact ></td> %>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Delete contact', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <div class="contact-content">
+          <div class="contact-details">
+            <td><%= contact.first_name %></td>
+            <td><%= contact.last_name %></td>
+            <td><%= contact.email %></td>
+            <td><%= contact.phone %></td>
+          </div>
+          <div class="contact-actions">
+            <td><%= link_to 'View', contact %></td>
+            <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+            <td><%= link_to 'Delete contact', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>

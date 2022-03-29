@@ -6,7 +6,11 @@
 
 <div class="columns">
   <%# <%= render 'search/form' %> 
-  <%= render 'partials/contacts_table' %>
-  <%= render partial: 'contacts/form', locals: { contact: @contact } %>
+  <%# <div class="contacts-table"><%= render 'partials/contacts_table' ></div> %>
+  <div class="contacts-form"><%= render partial: 'contacts/form', locals: { contact: @contact } %></div>
 </div>
 <%# <%= link_to 'New Contact', new_contact_path %>
+
+<section id="contacts">
+  <%= render 'partials/contact_card' %>
+</section>

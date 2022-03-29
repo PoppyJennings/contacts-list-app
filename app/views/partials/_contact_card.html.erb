@@ -1,13 +1,23 @@
-<div class="contacts">
+<div class="contact-cards">
   <% @contacts.each do |contact| %>
-    <div class="contact">
-      <%= contact.first_name %>
-      <%= contact.last_name %>
-      <%= contact.email %>
-      <%= contact.phone %>
-      <%= link_to 'Show', contact %>
-      <%= link_to 'Edit', edit_contact_path(contact) %>
-      <%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="contact-card d-flex">
+      <%# <div class="contact-content"> %>
+        <div class="contact-details d-flex">
+          <div><p><%= contact.first_name %> <%= contact.last_name %></p></div>
+          <%# <div><p><%= contact.last_name ></p></div> %>
+          <div><p><%= contact.email %></p></div>
+          <div><p><%= contact.phone %></p></div>
+        </div>
+        <div class="contact-actions d-flex">
+          <div class="contact-buttons d-flex">
+            <%= link_to 'View', contact %>
+            <%= link_to 'Edit', edit_contact_path(contact) %>
+          </div>
+          <div class="contact-delete d-flex"> 
+            <%= link_to 'Delete contact', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      <%# </div> %>
     </div>
   <% end %>
 </div>

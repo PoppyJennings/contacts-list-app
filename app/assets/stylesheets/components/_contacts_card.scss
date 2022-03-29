@@ -1,0 +1,33 @@
+.contact-cards {
+
+}
+
+.contact-card {
+  border: 2px solid red;
+  
+  // @media over 800px
+  // max-width: 70%;
+}
+
+.contact-details {
+ flex-direction: column;
+ overflow-wrap: anywhere;
+ // flex-grow: 1;
+ border: 1px solid blue;
+ min-width: 70%;
+}
+
+.contact-actions {
+  flex-direction: column;
+  // flex-grow: 1;
+  border: 1px solid green;
+  min-width: 30%;
+}
+
+.contact-buttons {
+  flex-direction: column;
+}
+
+.contact-delete {
+
+}

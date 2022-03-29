@@ -14,3 +14,5 @@
  *= require_self
  */
 @import 'contacts_table';
+@import 'contacts_card';
+@import 'contacts_form';

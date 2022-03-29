@@ -1,37 +1,33 @@
 
-/* Default table styles for this demo */
 table {
   border-collapse: collapse;
   text-align: left;
-  width: 75%;
-  margin-right: 50px;
 }
 table tr {
-  // background: white;
   border-bottom: 1px solid
 }
 table th, table td {
   padding: 10px;
   min-width: 80px
 }
-table td span {
-  // background: #eee;
-  // color: dimgrey;
-  // display: none;
-  // font-size: 10px;
-  // font-weight: bold;
-  // padding: 5px;
-  position: absolute;
-  text-transform: uppercase;
-  top: 0;
-  left: 0;
-}
+// table td span {
+//   // background: #eee;
+//   // color: dimgrey;
+//   // display: none;
+//   // font-size: 10px;
+//   // font-weight: bold;
+//   // padding: 5px;
+//   position: absolute;
+//   // text-transform: uppercase;
+//   top: 0;
+//   left: 0;
+// }
 
 /* Simple CSS for flexbox table on mobile */
 @media(max-width: 800px) {
   table thead {
-      left: -9999px;
-      position: absolute;
+      // left: -9999px;
+      // position: absolute;
       visibility: hidden;
   }
   table tr {
@@ -45,7 +41,7 @@ table td span {
   table td {
       margin: 0 -1px -1px 0;
       // padding-top: 35px;
-      position: relative;
+      // position: relative;
       width: 50%;
   }
   table td span {
@@ -93,3 +89,4 @@ div.actions {
 
 label {
   display: block; }
+
