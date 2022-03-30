@@ -23,14 +23,19 @@
 
 }
 
-section {
-  width: 100%;
-  margin: 50px 0;
-  background-color: #F4F4F5;
-}
+// section {
+//   width: 100%;
+//   margin: 70px 0;
+//   background-color: #F4F4F5;
+// }
 ///// UTILITIES /////
 .d-flex {
   display: flex;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
 }
 
 ///// TEXT /////
