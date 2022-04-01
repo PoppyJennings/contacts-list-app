@@ -1,5 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<section id="contact-details" class="contact-details-show d-flex">
+  <div class="contact-details-content">
+    <h1 class="">Contact details</h1>
+    <p class="contact-name"><%= @contact.first_name %> <%= @contact.last_name %></p>
+    <p><%= @contact.email %></p>
+    <p><%= @contact.phone %></p>
+    <div class="mt-5">
+      <%= link_to 'View all contacts', contacts_path, class: 'button button--pink mt-1' %>
+    </div>
+  </div>
+  <div class="update-contact">
+    <h2>Update this contact</h2>
+    <div class="contacts-form"><%= render partial: 'contacts/form', locals: { contact: @contact } %></div>
+  </div>
+</section>
+
+<% 
+=begin %>
+
 <h1>This is the show page for each contact</h1>
 <p>
   <strong>First name:</strong>
@@ -24,21 +43,82 @@
 <%= render 'form', contact: @contact %>
 
 <%# <%= link_to 'Edit', edit_contact_path(@contact) %>
-<%= link_to 'Back', contacts_path %>
+<%= link_to 'Contacts page', contacts_path %>
 
 <h1>Contact history</h1>
 
-<%= @contact.changes %>
-<%= @contact.previous_changes %>
+<%# <%= @contact.changes %>
+<%# <%= @contact.previous_changes %>
+
+<%# 0<% version.reify(options = {}) %>
 
 
+<%
+=end %>
+
+<% if @contact.versions.count == 1 %>
+
+there have been no updates to this contact
+<% else %>
+
+There have been <%= @contact.versions.count %> updates to this contact
+
+<%# <%= @contact.paper_trail.previous_version.first_name  %>
+<%# <%= @contact.paper_trail.previous_version.last_name  %> 
+<%# <%= @contact.paper_trail.previous_version.phone  %> 
+<%# <%= @contact.paper_trail.previous_version.email  %> 
+<%# 4<%= @contact.paper_trail.next_version  %>
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Current status</th>
+      <th>Previous version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @contact.first_name  %></td>
+      <td><%= @contact.paper_trail.previous_version.first_name  %></td>
+    </tr>
+    <tr>
+      <td><%= @contact.last_name  %></td>
+      <td><%= @contact.paper_trail.previous_version.last_name  %></td>
+    </tr>
+    <tr>  
+      <td><%= @contact.phone  %></td>
+      <td><%= @contact.paper_trail.previous_version.phone  %></td>
+    </tr>
+    <tr>
+      <td><%= @contact.email  %></td>
+      <td><%= @contact.paper_trail.previous_version.email  %></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<% end %>
+
+
+
+<%# 
+6 <% @contact.versions.each do |version| %>
+<%# <% version.item_id %> 
+<%# <% end %>
+
+
+
+<%# 5<%= @contact.versions.last.changeset %>
+
+<% 
+=begin %>
 
 <h2>Versions</h2>
 <table class='table'>
   <thead>
     <tr>
       <th>ID</th>
-      <th>Modifier</th>
+      <%# <th>Modifier</th> %>
       <th>Action</th>
       <th>Changes</th>
     </tr>
@@ -52,7 +132,8 @@
         <%= tag.td do %>
           <%= tag.ul class: 'list-group' do %>
             <li class='list-group-item'>
-              <strong>First Name:</strong> 
+              <strong>First Name:</strong>
+
               <%# <%= version.changed_object.first_name %>  %>
             </li>
             <li class='list-group-item'>
@@ -72,3 +153,17 @@
       <% end %>
     <% end %>
 </table>
+
+
+<% @contact.versions.each do |version| %>
+    <%= contact_from_version = version.reify %>
+    <%# <%= contact_from_version.first_name %> 
+<% end %>
+<br>
+<%# <%= @contact.activities.each do |activity| %> 
+<%# is this working?
+  
+<%= @contact.activities %>
+
+<% 
+=end %>

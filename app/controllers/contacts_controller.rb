@@ -2,11 +2,13 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: %i[show edit update destroy]
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.all.reverse
     @contact = Contact.new
   end
 
-  def show; end
+  def show
+    # @version = Version.new
+  end
 
   def new
     @contact = Contact.new

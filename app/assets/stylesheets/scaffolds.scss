@@ -28,15 +28,20 @@
 //   margin: 70px 0;
 //   background-color: #F4F4F5;
 // }
+
+
 ///// UTILITIES /////
 .d-flex {
   display: flex;
 }
 
-.sticky {
-  position: sticky;
-  top: 0;
+.mt-5 {
+  margin-top: 50px;
 }
+// .sticky {
+//   position: sticky;
+//   top: 0;
+// }
 
 ///// TEXT /////
 // a {
@@ -61,7 +66,7 @@ h1, h2, h3, h4, body, p, ol, ul {
 p {
   font-size: 18px;
   line-height: 24px;
-  margin: 0;
+  margin: 10px 0;
 }
 
 @media screen and (min-width: 600px) {

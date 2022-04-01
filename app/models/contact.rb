@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
 class Contact < ApplicationRecord
-  has_paper_trail on: [:update, :destroy]
+  # has_paper_trail on: [:update, :destroy]
+  has_paper_trail
+
+  acts_as_tracked
+
+  # has_many :versions
   # include ActiveModel::Dirty
 
   # define_attribute_methods :first_name, :last_name, :email, :phone
@@ -65,13 +70,13 @@ class Contact < ApplicationRecord
     self.last_name = last_name.downcase.titleize
   end
 
-  # def check_for_changes
-  #   puts changes # => {"name"=>["Nimish Gupta", "Nimish Mahajan"], "updated_at"=>[Tue, 20 Nov 2018 00:02:14 PST -08:00, Tue, 20 Nov 2018 00:06:15 PST -08:00]}
-  #   puts previous_changes # => {} At this point this will be empty beacuse changes are not made to DB yet
-  # end
+  def check_for_changes
+    puts changes # => {"name"=>["Nimish Gupta", "Nimish Mahajan"], "updated_at"=>[Tue, 20 Nov 2018 00:02:14 PST -08:00, Tue, 20 Nov 2018 00:06:15 PST -08:00]}
+    puts previous_changes # => {} At this point this will be empty beacuse changes are not made to DB yet
+  end
 
-  # def check_for_previous_changes
-  #   # but you can make use of previous_changes method to know what change has occurred.
-  #   puts previous_changes # => {"name"=>["Nimish Gupta", "Nimish Mahajan"], "updated_at"=>[Tue, 20 Nov 2018 00:06:15 PST -08:00, Tue, 20 Nov 2018 00:08:07 PST -08:00]}
-  # end
+  def check_for_previous_changes
+    # but you can make use of previous_changes method to know what change has occurred.
+    puts previous_changes # => {"name"=>["Nimish Gupta", "Nimish Mahajan"], "updated_at"=>[Tue, 20 Nov 2018 00:06:15 PST -08:00, Tue, 20 Nov 2018 00:08:07 PST -08:00]}
+  end
 end

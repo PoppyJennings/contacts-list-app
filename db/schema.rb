@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_29_122533) do
+ActiveRecord::Schema.define(version: 2022_03_31_141602) do
+
+  create_table "activities", force: :cascade do |t|
+    t.string "actor_type"
+    t.integer "actor_id"
+    t.string "subject_type"
+    t.integer "subject_id"
+    t.string "parent_type"
+    t.integer "parent_id"
+    t.text "attribute_changes"
+    t.string "activity_type"
+    t.string "human_description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["actor_type", "actor_id"], name: "index_activities_on_actor_type_and_actor_id"
+    t.index ["parent_type", "parent_id"], name: "index_activities_on_parent_type_and_parent_id"
+    t.index ["subject_type", "subject_id"], name: "index_activities_on_subject_type_and_subject_id"
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "first_name"
@@ -28,6 +45,7 @@ ActiveRecord::Schema.define(version: 2022_03_29_122533) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
+    t.string "object_change"
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
