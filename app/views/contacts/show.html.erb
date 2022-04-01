@@ -55,50 +55,64 @@
 
 <%
 =end %>
-
-<% if @contact.versions.count == 1 %>
-
-there have been no updates to this contact
-<% else %>
-
-There have been <%= @contact.versions.count %> updates to this contact
-
-<%# <%= @contact.paper_trail.previous_version.first_name  %>
-<%# <%= @contact.paper_trail.previous_version.last_name  %> 
-<%# <%= @contact.paper_trail.previous_version.phone  %> 
-<%# <%= @contact.paper_trail.previous_version.email  %> 
-<%# 4<%= @contact.paper_trail.next_version  %>
-<table class='table'>
-  <thead>
-    <tr>
-      <th>Current status</th>
-      <th>Previous version</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @contact.first_name  %></td>
-      <td><%= @contact.paper_trail.previous_version.first_name  %></td>
-    </tr>
-    <tr>
-      <td><%= @contact.last_name  %></td>
-      <td><%= @contact.paper_trail.previous_version.last_name  %></td>
-    </tr>
-    <tr>  
-      <td><%= @contact.phone  %></td>
-      <td><%= @contact.paper_trail.previous_version.phone  %></td>
-    </tr>
-    <tr>
-      <td><%= @contact.email  %></td>
-      <td><%= @contact.paper_trail.previous_version.email  %></td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-<% end %>
-
+<section id="contact-details-updates" class="contact-details-updates">
+  <% if @contact.versions.count == 1 %>
+    <h2>there have been no updates to this contact</h2>
+  <% else %>
+    <h2>There have been <u><%= @contact.versions.count %></u> updates to this contact</h2>
+  <%# <%= @contact.paper_trail.previous_version.first_name  %>
+  <%# <%= @contact.paper_trail.previous_version.last_name  %> 
+  <%# <%= @contact.paper_trail.previous_version.phone  %> 
+  <%# <%= @contact.paper_trail.previous_version.email  %> 
+  <%# 4<%= @contact.paper_trail.next_version  %>
+    <table class='table-updates'>
+      <thead>
+        <tr>
+          <th>Current record status</th>
+          <th>Previous version</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <% if @contact.first_name == @contact.paper_trail.previous_version.first_name %>
+            <td><%= @contact.first_name  %></td>
+            <td><%= @contact.paper_trail.previous_version.first_name  %></td>
+          <% else %>
+            <td><strong><%= @contact.first_name  %></strong></td>
+            <td><%= @contact.paper_trail.previous_version.first_name  %></td>
+          <% end %>
+        </tr>
+        <tr>
+          <% if @contact.last_name == @contact.paper_trail.previous_version.last_name %>
+            <td><%= @contact.last_name  %></td>
+            <td><%= @contact.paper_trail.previous_version.last_name  %></td>
+          <% else %>
+            <td><strong><%= @contact.last_name  %></strong></td>
+            <td><%= @contact.paper_trail.previous_version.last_name  %></td>
+          <% end %>
+        </tr>
+        <tr>
+          <% if @contact.phone == @contact.paper_trail.previous_version.phone %>
+            <td><%= @contact.phone  %></td>
+            <td><%= @contact.paper_trail.previous_version.phone  %></td>
+          <% else %>
+            <td><strong><%= @contact.phone  %></strong></td>
+            <td><%= @contact.paper_trail.previous_version.phone  %></td>
+          <% end %>
+        </tr>
+        <tr>
+          <% if @contact.email == @contact.paper_trail.previous_version.email %>
+            <td><%= @contact.email  %></td>
+            <td><%= @contact.paper_trail.previous_version.email  %></td>
+          <% else %>
+            <td><strong><%= @contact.email  %></strong></td>
+            <td><%= @contact.paper_trail.previous_version.email  %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+</section>
 
 
 <%# 
