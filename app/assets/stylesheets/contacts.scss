@@ -2,16 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// .columns {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   @media screen and (min-width: 500px) {
-//     flex-direction: column-reverse;
-//   }
-// }
-
-#contacts, #contact-details {
+// INDEX PAGE
+#contacts, #contact-details, #contact-details-search {
   background-color: #F4F4F5;
   padding: 10px 0;
 }
@@ -20,14 +12,15 @@
   background-image: url(https://res.cloudinary.com/dwsfhweeg/image/upload/v1648638353/samples/blue-arch-2_lptjen.png), url(https://res.cloudinary.com/dwsfhweeg/image/upload/v1648637630/samples/yellow-arch2_tr51bd.png);
   background-repeat: no-repeat, no-repeat;
   background-position: top right, bottom left;
+  @media screen and (max-width: 800px) {
+    background-image: none;
+  }
 }
 
-@media only screen and (max-width: 800px) {
-  .contacts {
+.contacts {
+  justify-content: space-between;
+  @media screen and (max-width: 800px) {
     flex-direction: column-reverse;
-  }
-  .contacts {
-    justify-content: space-between;
   }
 }
 
@@ -36,24 +29,31 @@
 }
 
 .add-contact {
-  flex-grow: 1;
-  margin-left: 2%;
+  @media screen and (max-width: 799px) {
+    margin-left: 2%;
+  }
+  @media screen and (min-width: 800px) {
+    flex-grow: 1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: fit-content;
+  }
 }
 
-// SHOW PAGE SCSS
-#contact-details {
+
+// SHOW PAGE 
+#contact-details, #contact-details-search {
   background-image: url(https://res.cloudinary.com/dwsfhweeg/image/upload/v1648638353/samples/blue-arch-2_lptjen.png);
   background-repeat: no-repeat;
   background-position: top right;
+  @media screen and (max-width: 800px) {
+    background-image: none;
+  }
 }
 
 #contact-details-updates {
   margin-left: 2%;
-}
-
-.table-updates {
-  table-layout: auto;
-  width: 70%;
 }
 
 @media only screen and (max-width: 800px) {
@@ -74,25 +74,3 @@
   margin-left: 2%;
   flex-grow: 2;
 }
-
-// p.contact-details-content {
-//   margin: 10%;
-// }
-
-
-// Want to have the form TO scroll with the page on mobile view but fixed to the top as sticky when on bigger screens (as two columns)
-// @media only screen and (max-width: 800px) {
-//   .add-contact {
-//     // flex-grow: 1;
-//     height: fit-content;
-//     margin-left: 2%;
-//     // position: static;
-//   }
-//   .add-contact {
-//     flex-grow: 1;
-//     position: -webkit-sticky;
-//     position: sticky;
-//     top: 0;
-//     height: auto;
-//   }
-// }

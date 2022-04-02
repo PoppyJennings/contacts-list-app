@@ -57,7 +57,7 @@
 =end %>
 <section id="contact-details-updates" class="contact-details-updates">
   <% if @contact.versions.count == 1 %>
-    <h2>there have been no updates to this contact</h2>
+    <h2>There have been no updates to this contact</h2>
   <% else %>
     <h2>There have been <u><%= @contact.versions.count %></u> updates to this contact</h2>
   <%# <%= @contact.paper_trail.previous_version.first_name  %>

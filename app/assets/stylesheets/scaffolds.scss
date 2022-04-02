@@ -36,10 +36,6 @@
 .mt-5 {
   margin-top: 50px;
 }
-// .sticky {
-//   position: sticky;
-//   top: 0;
-// }
 
 ///// TEXT /////
 // a {
@@ -67,16 +63,13 @@ p {
   margin: 10px 0;
 }
 
-@media screen and (min-width: 600px) {
-  h1 {
+h1 {
+  @media screen and (min-width: 600px) {
     color: #25253d;
     font-size: 40px;
     line-height: 50px;
   }
-}
-
-@media screen and (max-width: 600px) {
-  h1 {
+  @media screen and (max-width: 600px) {
     color: #25253d;
     font-size: 30px;
     line-height: 40px;
@@ -84,12 +77,13 @@ p {
 }
 
 .title {
-  margin: 0% 2%;
+  margin: 2%;
 }
 
 ol, ul {
   list-style: none;
 }
+
 ///// BUTTONS /////
 .button {
   font-size: 16px;

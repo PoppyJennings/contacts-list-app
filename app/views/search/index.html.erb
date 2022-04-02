@@ -1,7 +1,9 @@
-<%= render 'search/form' %>
-<h1 class="text-center"><%= pluralize(@contacts.count, "Result") %></h1>
-<div class="container">
-  <table class="table table-dark table-striped">
+
+<section id="contact-details-search" class="contact-details-show">
+  <h1 class="title"><%= pluralize(@contacts.count, "Contacts") %></h1>
+  <%= render 'search/form' %>
+
+  <table class="table-search">
     <thead>
       <tr>
         <th><%= sort_link(@query, :first_name, "First name", default_order: :asc) %></th>
@@ -12,11 +14,13 @@
     <tbody>
       <% @contacts.each do |contact| %>
         <tr>
-          <td><%= link_to contact.first_name, contact %></td>
+          <%# Work out why logic for this link breaks page %>
+          <%# <td><%= link_to contact.first_name, contact ></td> %>
+          <td><%= contact.first_name %></td>
           <td><%= contact.last_name %></td>
           <td><%= contact.email %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-</div>
+</section>
