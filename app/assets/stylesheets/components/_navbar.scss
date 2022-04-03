@@ -9,7 +9,7 @@
 }
 
 img.logo {
-  height: 35px;
+  height: 30px;
 }
 
 a.list__navbar {
@@ -20,4 +20,7 @@ a.list__navbar {
   display: flex;
   align-items: center;
   padding-right: 30px;
+  &:hover {
+    color: #ff355e;
+  }
 }

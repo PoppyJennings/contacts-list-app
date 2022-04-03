@@ -29,11 +29,12 @@
 }
 
 .add-contact {
-  @media screen and (max-width: 799px) {
-    margin-left: 2%;
-  }
+  // @media screen and (max-width: 799px) {
+  //   margin: 2%;
+  // }
   @media screen and (min-width: 800px) {
     flex-grow: 1;
+    // margin: 2%;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -65,12 +66,7 @@
   }
 }
 
-.contact-details-content {
-  margin-left: 2%;
-  flex-grow: 2;
-}
-
-.update-contact {
+.contact-details-content, .update-contact {
   margin-left: 2%;
   flex-grow: 2;
 }

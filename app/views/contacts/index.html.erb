@@ -1,13 +1,15 @@
-<p id="notice"><%= notice %></p>
+<%# <p id="notice"><%= notice ></p> %>
 
 <section id="contacts" class="contacts d-flex">
   <div class="contact-list">
     <h1 class="title">Contacts</h1>
     <%= render 'search/form' %>
+    <p id="notice"><%= notice %></p>
     <%= render 'partials/contacts_card' %>
   </div>
-  <div class="add-contact">
+  <div class="add-contact m-2">
     <h2>Add a contact</h2>
     <div class="contacts-form"><%= render partial: 'contacts/form', locals: { contact: @contact } %></div>
+    <p id="notice"><%= notice %></p>
   </div>
 </section>

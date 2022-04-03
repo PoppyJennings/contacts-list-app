@@ -1,26 +1,38 @@
-<%# <div class="contact-cards"> %>
-  <% @contacts.each do |contact| %>
-    <div class="contact-card d-flex">
-      <%# <div class="contact-content"> %>
-        <div class="contact-details d-flex">
-          <div><p class="contact-name"><%= contact.first_name %> <%= contact.last_name %></p></div>
-          <%# <div><p><%= contact.last_name ></p></div> %>
-          <div><p><%= contact.email %></p></div>
-          <div><p><%= contact.phone %></p></div>
-        </div>
-        <div class="contact-actions d-flex">
-          <div class="contact-buttons d-flex">
-            <%= link_to 'View', contact, class: "button button--pink" %>
-            <%= link_to 'Edit', edit_contact_path(contact), class: "button button--pink-outline" %>
-          </div>
-          <div class="contact-delete d-flex"> 
-            <%= link_to 'Delete contact', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
-        </div>
-      <%# </div> %>
+<% @contacts.each do |contact| %>
+  <div class="contact-card d-flex">
+    <div class="contact-details d-flex">
+      <div><p class="contact-name"><%= contact.first_name %> <%= contact.last_name %></p></div>
+      <div><p><%= contact.email %></p></div>
+      <div><p><%= contact.phone %></p></div>
     </div>
-  <% end %>
-<%# </div> %>
+    <div class="contact-actions d-flex m-2">
+      <div class="contact-buttons d-flex">
+        <%= link_to 'View', contact, class: "button button--pink" %>        
+        <button class="button button--pink-outline collapsible">Edit</button>
+        <div class="content">
+          <%= render partial: 'contacts/form', locals: { contact: contact } %>
+        </div>
+      </div>
+      <div class="contact-delete d-flex"> 
+        <%= link_to 'Delete contact', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  </div>
+<% end %>
 
-            <%# Would be good to show the edit contact form directly on the page when the edit putton is clicked %>
-            <%# <%= render 'form', contact: @contact %>
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } 
+    });
+  }
+</script>

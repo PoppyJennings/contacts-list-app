@@ -6,9 +6,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
-  def show
-    # @version = Version.new
-  end
+  def show; end
 
   def new
     @contact = Contact.new
@@ -33,7 +31,7 @@ class ContactsController < ApplicationController
   def update
     respond_to do |format|
       if @contact.update(contact_params)
-        format.html { redirect_to contact_url(@contact), notice: 'Contact was successfully updated.' }
+        format.html { redirect_back(fallback_location: 'root_path', notice: 'Contact was successfully updated.')}
         format.json { render :show, status: :ok, location: @contact }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -41,7 +39,7 @@ class ContactsController < ApplicationController
       end
     end
   end
-
+  
   def destroy
     @contact.destroy
 
@@ -51,15 +49,15 @@ class ContactsController < ApplicationController
     end
   end
 
-  def rollback
-    @contact = Contact.find(params[:contact_id])
-    version = @contact.versions.find(params[:version])
-    if version.reify.save
-      redirect_to @contact, notice: 'contact was successfully rollbacked.'
-    else
-      render :show
-    end
-  end
+  # def rollback
+  #   @contact = Contact.find(params[:contact_id])
+  #   version = @contact.versions.find(params[:version])
+  #   if version.reify.save
+  #     redirect_to @contact, notice: 'contact was successfully rollbacked.'
+  #   else
+  #     render :show
+  #   end
+  # end
 
   private
 
