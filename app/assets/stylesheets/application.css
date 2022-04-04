@@ -14,7 +14,6 @@
  *= require_self
  */
 
-@import 'config/colors';
 @import 'contacts_table';
 @import 'contacts_card';
 @import 'contacts_form';
