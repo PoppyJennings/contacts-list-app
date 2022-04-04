@@ -53,7 +53,7 @@
 }
 
 .active, .collapsible:hover {
-  background-color: #F4F4F5;
+  background-color: $lilac;
 }
 
 .content {
@@ -61,6 +61,6 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  background-color: #F4F4F5;
+  background-color: $lilac;
   border-radius: 5px;
 }

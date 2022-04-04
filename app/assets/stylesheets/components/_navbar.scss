@@ -16,11 +16,11 @@ a.list__navbar {
   font-size: 18px;
   line-height: 28px;
   font-weight: 600;
-  color: #25253d;
+  color: $darkest-grey;
   display: flex;
   align-items: center;
   padding-right: 30px;
   &:hover {
-    color: #ff355e;
+    color: $pink;
   }
 }
