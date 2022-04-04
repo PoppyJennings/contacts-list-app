@@ -14,6 +14,6 @@
  *= require_self
  */
 
-@import 'contacts_table';
-@import 'contacts_card';
-@import 'contacts_form';
+@import 'components/contacts_card';
+@import 'components/contacts_form';
+@import 'components/contacts_table';
