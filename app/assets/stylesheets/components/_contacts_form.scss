@@ -3,7 +3,11 @@ div.actions {
   margin-bottom: 10px; }
 
 #notice {
-  color: green; }
+  border-radius: 5px;
+  color: #07A2AD;
+  margin: 2%;
+  font-weight: 600; 
+}
 
 .field_with_errors {
   padding: 2px;
@@ -33,11 +37,6 @@ div.actions {
 label {
   display: block;
   color: #25253d;
-  // font-size: large;
-}
-
-.field {
-  // border: 2px solid blue;
 }
 
 input, .button-form-add-contact {

@@ -1,32 +1,9 @@
-// html {
-//   width: fit-content;
-// }
-
-// body {
-//   background-color: #fff;
-//   // color: #333;
-//   margin: 33px; 
-// }
-
-// body, p, ol, ul, td {
-//   font-family: verdana, arial, helvetica, sans-serif;
-//   font-size: 13px;
-//   line-height: 18px; 
-// }
-
-// pre {
-//   background-color: #eee;
-//   padding: 10px;
-//   font-size: 11px; }
-
-.container {
-
-}
-
-// section {
-//   margin: 2%;
-// }
-
+$pink: #ff355e;
+$dark-pink: #e51943;
+$darkest-grey: #25253d;
+$dark-grey: #515164;
+$teal: #07A2AD;
+$lilac: #F4F4F5;
 
 ///// UTILITIES /////
 .d-flex {
@@ -42,16 +19,6 @@
 }
 
 ///// TEXT /////
-// a {
-//   color: #000; }
-
-// a:visited {
-//   color: #666; }
-
-// a:hover {
-//   color: #fff;
-//   background-color: #000; }
-
 a {
   text-decoration: none !important;
 }
@@ -96,13 +63,12 @@ ol, ul {
   border-radius: 10rem;
   cursor: pointer;
   text-align: center;
-  // height: 20px;
   margin: 5px 0;
 }
 
 .button--pink {
   border: none;
-  background: #ff355e;
+  background: $pink;
   color: white;
   line-height: 20px;
   &:hover {
@@ -111,9 +77,9 @@ ol, ul {
 }
 
 .button--pink-outline {
-  border: 2px solid #ff355e;
+  border: 2px solid $pink;
   background: white;
-  color: #ff355e;
+  color: $pink;
   line-height: 18px;
   &:hover {
     background: #F4F4F5;

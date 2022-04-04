@@ -1,4 +1,3 @@
-
 table {
   border-collapse: collapse;
   text-align: left;
@@ -19,8 +18,6 @@ table th, table td {
 
 .table-search {
   table-layout: auto;
-  width: 96%;
-  // margin: 2%;
 }
 
 table a {
@@ -29,25 +26,3 @@ table a {
     color: #ff355e;
   }
 }
-
-// /* Simple CSS for flexbox table on mobile */
-// @media(max-width: 800px) {
-//   table thead {
-//       visibility: hidden;
-//   }
-//   table tr {
-//       // border-bottom: 0;
-//       display: flex;
-//       flex-direction: row;
-//       flex-wrap: wrap;
-//       margin-bottom: 40px;
-//       border: 1px solid;
-//   }
-//   table td {
-//       margin: 0 -1px -1px 0;
-//       width: 50%;
-//   }
-//   table td span {
-//       display: block;
-//   }
-// }

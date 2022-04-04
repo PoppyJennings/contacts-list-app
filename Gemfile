@@ -41,7 +41,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gem 'acts_as_tracked'
+# gem 'acts_as_tracked'
+gem 'faker'
 gem 'paper_trail'
 gem 'ransack', '~> 2.6'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
