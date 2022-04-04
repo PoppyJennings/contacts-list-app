@@ -196,6 +196,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.7)
   ransack (~> 2.6)
   sass-rails (>= 6)
+  sassc (~> 2.0, >= 2.0.1)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
