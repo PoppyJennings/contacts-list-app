@@ -8,7 +8,7 @@ table tr {
 table th, table td {
   padding: 10px;
   min-width: 80px;
-  color: #25253d;  
+  color: $darkest-grey;  
 }
 
 .table-updates {
@@ -21,8 +21,8 @@ table th, table td {
 }
 
 table a {
-  color: #25253d;
+  color: $darkest-grey;
   &:hover {
-    color: #ff355e;
+    color: $pink;
   }
 }
