@@ -5,8 +5,8 @@ class ActsAsTrackedMigration < ActiveRecord::Migration[6.0]
       t.references :subject, polymorphic: true
       t.references :parent, polymorphic: true
       t.text :attribute_changes
-      t.string :activity_type
-      t.string :human_description
+      t.text :activity_type
+      t.text :human_description
       t.timestamps null: false
     end
   end

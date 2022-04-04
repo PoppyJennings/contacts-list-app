@@ -10,10 +10,10 @@ class CreateVersions < ActiveRecord::Migration[6.0]
 
   def change
     create_table :versions do |t|
-      t.string   :item_type, null: false
+      t.text   :item_type, null: false
       t.bigint   :item_id,   null: false
-      t.string   :event,     null: false
-      t.string   :whodunnit
+      t.text   :event,     null: false
+      t.text   :whodunnit
       t.text     :object, limit: TEXT_BYTES
 
       # Known issue in MySQL: fractional second precision

@@ -12,16 +12,19 @@
 
 ActiveRecord::Schema.define(version: 2022_03_31_141602) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "activities", force: :cascade do |t|
     t.string "actor_type"
-    t.integer "actor_id"
+    t.bigint "actor_id"
     t.string "subject_type"
-    t.integer "subject_id"
+    t.bigint "subject_id"
     t.string "parent_type"
-    t.integer "parent_id"
+    t.bigint "parent_id"
     t.text "attribute_changes"
-    t.string "activity_type"
-    t.string "human_description"
+    t.text "activity_type"
+    t.text "human_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["actor_type", "actor_id"], name: "index_activities_on_actor_type_and_actor_id"
@@ -30,20 +33,20 @@ ActiveRecord::Schema.define(version: 2022_03_31_141602) do
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
+    t.text "first_name"
+    t.text "last_name"
+    t.text "email"
     t.integer "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "versions", force: :cascade do |t|
-    t.string "item_type", null: false
+    t.text "item_type", null: false
     t.bigint "item_id", null: false
-    t.string "event", null: false
-    t.string "whodunnit"
-    t.text "object", limit: 1073741823
+    t.text "event", null: false
+    t.text "whodunnit"
+    t.text "object"
     t.datetime "created_at"
     t.string "object_change"
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
